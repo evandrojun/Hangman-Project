@@ -58,8 +58,6 @@ class Hangman
       puts "    |"
       puts "    |"
       puts "    |"
-      puts "    |"
-      puts "    |"
       puts "    /\\"
     elsif @letters_misses == 1
       puts `clear`
@@ -68,8 +66,6 @@ class Hangman
       puts "    |        |"
       puts "    |        __"
       puts "    |       |__|"
-      puts "    |"
-      puts "    |"
       puts "    |"
       puts "    |"
       puts "    |"
@@ -88,8 +84,6 @@ class Hangman
       puts "    |"
       puts "    |"
       puts "    |"
-      puts "    |"
-      puts "    |"
       puts "    /\\"
     elsif @letters_misses == 3
       puts `clear`
@@ -101,8 +95,6 @@ class Hangman
       puts "    |        |"
       puts "    |        |"
       puts "    |        /"
-      puts "    |"
-      puts "    |"
       puts "    |"
       puts "    |"
       puts "    /\\"
@@ -118,8 +110,6 @@ class Hangman
       puts "    |        /\\"
       puts "    |"
       puts "    |"
-      puts "    |"
-      puts "    |"
       puts "    /\\"
     elsif @letters_misses == 5
       puts `clear`
@@ -133,8 +123,6 @@ class Hangman
       puts "    |        /\\"
       puts "    |"
       puts "    |"
-      puts "    |"
-      puts "    |"
       puts "    /\\"
     elsif @letters_misses == 6
       puts `clear`
@@ -146,8 +134,6 @@ class Hangman
       puts "    |      __|__"
       puts "    |        |"
       puts "    |        /\\"
-      puts "    |"
-      puts "    |"
       puts "    |"
       puts "    |"
       puts "    /\\"
