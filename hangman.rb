@@ -27,7 +27,7 @@ class Hangman
   def check_result
     if @answer == @word
       @match_status = "You Win"
-    elsif @letters_misses > 6
+    elsif @letters_misses >= 6
       @match_status = "You Lose"
     end
   end
@@ -46,6 +46,113 @@ class Hangman
       @letters_misses += 1
     end
   end
+
+  def print_hangman
+    if @letters_misses == 0
+      puts "    _________"
+      puts "    |        |"
+      puts "    |        |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    /\\"
+    elsif @letters_misses == 1
+      puts `clear`
+
+      puts "    _________"
+      puts "    |        |"
+      puts "    |        __"
+      puts "    |       |__|"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    /\\"
+    elsif @letters_misses == 2
+      puts `clear`
+
+      puts "    _________"
+      puts "    |        |"
+      puts "    |        __"
+      puts "    |       |__|"
+      puts "    |        |"
+      puts "    |        |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    /\\"
+    elsif @letters_misses == 3
+      puts `clear`
+
+      puts "    _________"
+      puts "    |        |"
+      puts "    |        __"
+      puts "    |       |__|"
+      puts "    |        |"
+      puts "    |        |"
+      puts "    |        /"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    /\\"
+    elsif @letters_misses == 4
+      puts `clear`
+
+      puts "    _________"
+      puts "    |        |"
+      puts "    |        __"
+      puts "    |       |__|"
+      puts "    |        |"
+      puts "    |        |"
+      puts "    |        /\\"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    /\\"
+    elsif @letters_misses == 5
+      puts `clear`
+
+      puts "    _________"
+      puts "    |        |"
+      puts "    |        __"
+      puts "    |       |__|"
+      puts "    |      __|"
+      puts "    |        |"
+      puts "    |        /\\"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    /\\"
+    elsif @letters_misses == 6
+      puts `clear`
+
+      puts "    _________"
+      puts "    |        |"
+      puts "    |        __"
+      puts "    |       |__|"
+      puts "    |      __|__"
+      puts "    |        |"
+      puts "    |        /\\"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    |"
+      puts "    /\\"
+    end
+  end
 end
 
 class Game
@@ -60,15 +167,15 @@ class Game
     @game.begin_game
 
     while (@game.match_status == "Playing")
-      print "Enter a letter: "
+      @game.print_hangman
+      puts @game.answer.join(" ")
+      puts "\nMisses: #{@game.letters_misses}"
+
+      print "\n#{@player.name}\nEnter a letter: "
 
       c = gets.chomp
 
       @game.check_letter(c)
-
-      puts @game.answer.join(" ")
-
-      puts "Misses: #{@game.letters_misses}"
 
       @game.check_result
     end
