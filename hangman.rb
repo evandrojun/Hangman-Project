@@ -10,7 +10,7 @@ class Hangman
   attr_accessor :letters_misses, :picked_word, :words_list, :begin_game, :word, :match_status, :answer
 
   def initialize
-    @words_list = ["Banana", "Morango", "Uva", "Casa", "Paralelepipedo"]
+    @words_list = ["Banana", "Morango", "Uva", "Casa", "Paralelepipedo", "Rocha", "Notebook", "Basement"]
     @letters_misses = 0
     @picked_word = ""
     @match_status = ""
@@ -21,7 +21,8 @@ class Hangman
   def begin_game
     @picked_word = @words_list.sample
     @word = @picked_word.split(//)
-    @match_status = "Playing"
+    puts @match_status = "Playing"
+    puts "Word size: #{@word.length}"
   end
 
   def check_result
