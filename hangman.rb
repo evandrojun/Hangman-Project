@@ -10,7 +10,7 @@ class Hangman
   attr_accessor :letters_misses, :picked_word, :words_list, :begin_game, :word, :match_status, :answer
 
   def initialize
-    @words_list = ["Banana", "Morango", "Uva", "Casa", "Paralelepipedo"]
+    @words_list = ["Banana", "Morango", "Uva", "Casa", "Paralelepipedo", "Rocha", "Notebook", "Basement"]
     @letters_misses = 0
     @picked_word = ""
     @match_status = ""
@@ -21,7 +21,8 @@ class Hangman
   def begin_game
     @picked_word = @words_list.sample
     @word = @picked_word.split(//)
-    @match_status = "Playing"
+    puts @match_status = "Playing"
+    puts "Word size: #{@word.length}"
   end
 
   def check_result
@@ -58,8 +59,6 @@ class Hangman
       puts "    |"
       puts "    |"
       puts "    |"
-      puts "    |"
-      puts "    |"
       puts "    /\\"
     elsif @letters_misses == 1
       puts `clear`
@@ -68,8 +67,6 @@ class Hangman
       puts "    |        |"
       puts "    |        __"
       puts "    |       |__|"
-      puts "    |"
-      puts "    |"
       puts "    |"
       puts "    |"
       puts "    |"
@@ -88,8 +85,6 @@ class Hangman
       puts "    |"
       puts "    |"
       puts "    |"
-      puts "    |"
-      puts "    |"
       puts "    /\\"
     elsif @letters_misses == 3
       puts `clear`
@@ -101,8 +96,6 @@ class Hangman
       puts "    |        |"
       puts "    |        |"
       puts "    |        /"
-      puts "    |"
-      puts "    |"
       puts "    |"
       puts "    |"
       puts "    /\\"
@@ -118,8 +111,6 @@ class Hangman
       puts "    |        /\\"
       puts "    |"
       puts "    |"
-      puts "    |"
-      puts "    |"
       puts "    /\\"
     elsif @letters_misses == 5
       puts `clear`
@@ -133,8 +124,6 @@ class Hangman
       puts "    |        /\\"
       puts "    |"
       puts "    |"
-      puts "    |"
-      puts "    |"
       puts "    /\\"
     elsif @letters_misses == 6
       puts `clear`
@@ -146,8 +135,6 @@ class Hangman
       puts "    |      __|__"
       puts "    |        |"
       puts "    |        /\\"
-      puts "    |"
-      puts "    |"
       puts "    |"
       puts "    |"
       puts "    /\\"
